@@ -4,8 +4,12 @@ public class MyMain {
     // Ex. divisibleByFour(16) -> true
     //     divisibleByFour(5) -> false
     public static boolean divisibleByFour(int num) {
-        // REPLACE WITH YOUR CODE HERE
-        return false;
+        if (num%4 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     // This method prints every number from 1 up to and including the input biggest
@@ -14,15 +18,25 @@ public class MyMain {
     // 6 7 8 9 10
     // ...
     public static void printNumsUpTo(int biggest) {
-        // REPLACE THIS WITH YOUR CODE
+        for (int i = 1; i<=biggest; i++) {
+            System.out.print(i + " ");
+            if (i % 5 == 0) {
+                System.out.println();
+            }
+        }
     }
 
     // This method is given an input x, and it adds up the sum of its digits
     // Ex. sumDigits(61) -> 7 because 6 + 1 = 7
     //     sumDigits(123) -> 6 because 1 + 2 + 3 = 6
     public static int sumDigits(int x) {
-        // REPLACE THIS WITH YOUR CODE
-        return 0;
+        int sum = 0;
+        while(x>0){
+            int lastdigit = x%10;
+            x=x/10;
+            sum += lastdigit;
+        }
+        return sum;
     }
 
     // Bonus: This method returns true if the input num is a "self-divisor",
@@ -35,7 +49,10 @@ public class MyMain {
     // Note that 0 is not considered to be a divisor of any number, so any number containing a 0
     // digit is NOT a self-divisor.
     public static boolean isSelfDivisor(int num) {
-        // REPLACE THIS WITH YOUR CODE
+        while(num>0) {
+            int lastdigit = num % 10;
+            num = num / 10;
+        }
         return false;
     }
 
